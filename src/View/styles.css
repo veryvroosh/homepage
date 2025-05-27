@@ -1,3 +1,7 @@
+:root {
+  font-family: "Playfair Display", serif;
+}
+
 body {
   margin: 0;
 }
@@ -10,12 +14,25 @@ body {
 }
 
 header {
+  position: relative;
   width: 100%;
   padding: 4rem 0;
-  background-color: darkcyan;
+  z-index: 1;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+header::before {
+  height: 100%;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #0088ba;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 100%);
+  animation: revealShape 1s ease-in-out forwards;
+  z-index: -1;
 }
 
 picture img {
@@ -27,13 +44,17 @@ picture img {
 
 #main-image-div {
   position: relative;
+  z-index: 999;
   width: 100%;
-  max-width: 450px;
+  max-width: 400px;
+  box-shadow:
+          -2px 2px 5px rgba(0, 0, 0, 0.2),   /* tiny left shadow */
+          4px 4px 5px rgba(0, 0, 0, 0.45); /* main bottom-right shadow */
 }
 
 #overlay-text {
   margin: 0;
-  font-size: 46px;
+  font-size: 40px;
   color: white;
   position: absolute;
   bottom: 1rem;
@@ -41,12 +62,24 @@ picture img {
 }
 
 #aboutme-div {
+  position: relative;
   font-size: 20px;
-  background-color: purple;
+  background-color: #ffffff;
   padding: 2rem;
   width: 100%;
   max-width: 600px;
-  height: 70%;
+  height: 65%;
+  box-shadow:
+          -2px 2px 5px rgba(0, 0, 0, 0.2),   /* tiny left shadow */
+          4px 4px 5px rgba(0, 0, 0, 0.45); /* main bottom-right shadow */
+}
+
+#aboutme-icons-div {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: 10px;
 }
 
 h2 {
@@ -70,9 +103,12 @@ main {
 }
 
 .card {
-  background-color: green;
+  background-color: #ffffff;
   width: 350px;
   height: 425px;
+  box-shadow:
+          -2px 2px 5px rgba(0, 0, 0, 0.2),   /* tiny left shadow */
+          4px 4px 5px rgba(0, 0, 0, 0.45); /* main bottom-right shadow */
 }
 
 .card-info {
@@ -97,9 +133,47 @@ h3 {
   justify-content: space-between;
 }
 
-
-
 footer {
   background-color: darkcyan;
+  padding: 2rem 0;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 12rem;
   width: 100%;
+}
+
+#footer-div {
+  width: 100%;
+  max-width: 350px;
+}
+
+#footer-div h2 {
+  font-size: 36px;
+  margin-bottom: 2rem;
+}
+
+#footer-div p {
+  margin: 0 0 0.5rem 0;
+  font-size: 20px;
+}
+
+#footer-phone, #footer-email {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#footer-phone img, #footer-email img {
+  margin-bottom: 8px;
+}
+
+#footer-icons {
+  display: flex;
+  gap: 10px;
+}
+
+footer img {
+  width: 100%;
+  max-width: 650px;
 }
