@@ -1,0 +1,245 @@
+:root {
+  font-family: "Playfair Display", serif;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  justify-items: center;
+  min-height: 100vh;
+}
+
+/* ------------------ Header ------------------ */
+header {
+  position: relative;
+  width: 100%;
+  padding: 4rem 0;
+  z-index: 1;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+header::before {
+  height: 100%;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #0088ba;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 100%);
+  animation: revealShape 1s ease-in-out forwards;
+  z-index: -1;
+}
+
+#main-image-div {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  box-shadow:
+          -2px 2px 5px rgba(0, 0, 0, 0.2),
+          4px 4px 5px rgba(0, 0, 0, 0.45);
+}
+
+#main-image-div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#overlay-text {
+  margin: 0;
+  font-size: 2.5rem;
+  color: white;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+#aboutme-div {
+  position: relative;
+  background-color: #ffffff;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  box-shadow:
+          -2px 2px 5px rgba(0, 0, 0, 0.2),
+          4px 4px 5px rgba(0, 0, 0, 0.45);
+}
+
+#aboutme-icons-div {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: 10px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+/* ------------------ Main ------------------ */
+main {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  align-items: center;
+}
+
+#projects-div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  box-shadow:
+          -2px 2px 5px rgba(0, 0, 0, 0.2),
+          4px 4px 5px rgba(0, 0, 0, 0.45);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card-info {
+  padding: 1rem;
+}
+
+.card-info p {
+  margin: 0.5rem 0;
+}
+
+.project-title-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+.icon {
+  width: 1.7rem;
+}
+
+/* ------------------ Footer ------------------ */
+footer {
+  background-color: darkcyan;
+  padding: 2rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#footer-div {
+  width: 100%;
+  max-width: 350px;
+}
+
+#footer-div h2 {
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+}
+
+#footer-div p {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+#footer-phone, #footer-email {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#footer-phone img, #footer-email img {
+  margin-bottom: 8px;
+}
+
+#footer-icons {
+  display: flex;
+  gap: 10px;
+}
+
+footer img {
+  width: 100%;
+  max-width: 650px;
+}
+
+/* ------------------ Tablet ------------------ */
+@media (max-width: 1024px) {
+  #projects-div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  header {
+    padding: 2rem 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #aboutme-div {
+    margin-top: 2rem;
+    max-width: 90%;
+  }
+
+  #main-image-div {
+    max-width: 90%;
+  }
+}
+
+/* ------------------ Phone ------------------ */
+@media (max-width: 600px) {
+  #projects-div {
+    grid-template-columns: 1fr;
+  }
+
+  #aboutme-icons-div {
+    position: static;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
+  #footer-div h2 {
+    font-size: 2rem;
+  }
+
+  footer {
+    gap: 2rem;
+  }
+
+  footer img {
+    max-width: 100%;
+  }
+
+  #main-image-div {
+    max-width: 100%;
+  }
+
+  #aboutme-div {
+    padding: 1.5rem;
+  }
+}

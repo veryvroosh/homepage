@@ -22,6 +22,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 header::before {
@@ -44,6 +45,7 @@ picture img {
 
 #main-image-div {
   position: relative;
+  /*margin-left: -80px;*/
   z-index: 999;
   width: 100%;
   max-width: 400px;
@@ -68,7 +70,7 @@ picture img {
   padding: 2rem;
   width: 100%;
   max-width: 600px;
-  height: 65%;
+  height: auto;
   box-shadow:
           -2px 2px 5px rgba(0, 0, 0, 0.2),   /* tiny left shadow */
           4px 4px 5px rgba(0, 0, 0, 0.45); /* main bottom-right shadow */
@@ -89,26 +91,31 @@ h2 {
 }
 
 main {
-  margin: 2rem;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  align-items: center;
   gap: 2rem;
 }
 
 #projects-div {
   display: grid;
-  grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 5rem;
+  gap: 2rem;
 }
 
 .card {
   background-color: #ffffff;
-  width: 350px;
   height: 425px;
   box-shadow:
           -2px 2px 5px rgba(0, 0, 0, 0.2),   /* tiny left shadow */
           4px 4px 5px rgba(0, 0, 0, 0.45); /* main bottom-right shadow */
+}
+
+.card, .card-image {
+  width: 100%;
+  max-width: 40vw;
 }
 
 .card-info {
@@ -139,13 +146,16 @@ footer {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
-  gap: 12rem;
+  /*align-items: center;*/
+  gap: 5vw;
+  /*flex-direction: column;*/
   width: 100%;
 }
 
 #footer-div {
   width: 100%;
   max-width: 350px;
+  padding: 0 3rem;
 }
 
 #footer-div h2 {
@@ -173,7 +183,51 @@ footer {
   gap: 10px;
 }
 
-footer img {
+#footer-picture {
   width: 100%;
   max-width: 650px;
+  padding: 0 3rem;
+}
+
+@media (max-width: 1024px) {
+  #projects-div {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  header {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  #overlay-text {
+    transform: translate(100%, -420%);
+  }
+
+  #aboutme-div {
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    margin-top: 3rem;
+    max-width: 70%;
+  }
+
+  #aboutme-h2 {
+    margin-left: 40vw;
+  }
+
+  #main-image-div {
+    float: left;
+    margin-left: 2rem;
+    margin-right: -9vw;
+    margin-bottom: -3vw;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  #projects-div {
+    grid-template-columns: 1fr;
+  }
 }
