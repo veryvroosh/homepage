@@ -32,7 +32,6 @@ header::before {
   inset: 0;
   background-color: #0088ba;
   clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 100%);
-  animation: revealShape 1s ease-in-out forwards;
   z-index: -1;
 }
 
@@ -146,9 +145,7 @@ footer {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
-  /*align-items: center;*/
   gap: 5vw;
-  /*flex-direction: column;*/
   width: 100%;
 }
 
@@ -227,7 +224,55 @@ footer {
 }
 
 @media (max-width: 600px) {
+  header {
+    display: flex;
+  }
+
+  #main-image-div {
+    float: none;
+    margin: -1rem 0 0 0;
+    max-width: 90%;
+  }
+
+  #aboutme-div {
+    padding: 1rem;
+    transform: none;
+    top: auto;
+    left: auto;
+    max-width: 90%;
+  }
+
+  #aboutme-h2 {
+    margin-left: 27vw;
+  }
+
+  #overlay-text {
+    transform: none;
+  }
+
   #projects-div {
     grid-template-columns: 1fr;
+  }
+
+  .card, .card-image {
+    width: 100%;
+    max-width: 70vw;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  #footer-div {
+    max-width: 80vw;
+    padding: 0;
+  }
+
+  #footer-picture {
+    width: 100%;
+    max-width: 80vw;
+    padding: 0;
   }
 }
